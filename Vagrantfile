@@ -89,6 +89,9 @@ Vagrant.configure("2") do |config|
 
     curl -R https://raw.githubusercontent.com/DenisCarriere/.bashrc/master/.bashrc >> /home/ubuntu/.bashrc
     echo >> /home/ubuntu/.vimrc; echo "set t_Co=256" >> /home/ubuntu/.vimrc
+
+    sh /host_data/user_setup.sh
+
     chown -R ubuntu:ubuntu /home/ubuntu
 
   SHELL
