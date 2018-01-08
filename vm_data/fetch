@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+import os
+import sys
+
+def main():
+    if len(sys.argv) < 2 or (not 'week' in sys.argv[1]):
+        print("Usage: %s [week-number]" % __file__)
+        print("E.g., %s week1" % __file__)
+        quit()
+    print("Cloning %s challenges" % sys.argv[1])
+    os.system("git clone git@cs519.unexploitable.systems:%s" % sys.argv[1])
+
+
+if __name__ == '__main__':
+  main()
