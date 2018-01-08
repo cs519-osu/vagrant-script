@@ -1,2 +1,15 @@
-#!/bin/sh
-ssh cs519user@vm-ctf1.eecs.oregonstate.edu
+#!/usr/bin/env python
+import os
+import sys
+
+def main():
+    if len(sys.argv) < 2 or (not 'week' in sys.argv[1]):
+        print("Usage: %s [week-number]" % __file__)
+        print("E.g., %s week1" % __file__)
+        quit()
+    print("Connecting to %s" % sys.argv[1])
+    os.system("ssh %s@vm-ctf1.eecs.oregonstate.edu" % sys.argv[1])
+
+
+if __name__ == '__main__':
+  main()
