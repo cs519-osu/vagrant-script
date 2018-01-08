@@ -80,7 +80,7 @@ Vagrant.configure("2") do |config|
     pip install pwntools
     echo "PIP install DONE"
 
-    git clone https://github.com/longld/peda.git /home/ubuntu/peda
+    git clone https://github.com/cs519-osu/peda.git /home/ubuntu/peda
     echo "source ~/peda/peda.py" >> /home/ubuntu/.gdbinit
     echo "PEDA install DONE!"
 
