@@ -1,6 +1,20 @@
 #!/usr/bin/env python
 
+import glob
 import os
+
+def remove_cr(fn):
+    ran = False
+    with open(fn, 'r+b') as f:
+        data = f.read()
+        data = "\n".join(data.split("\r\n"))
+        f.seek(0)
+        f.write(data)
+        print("size %d" % len(data))
+        f.truncate(len(data))
+        f.close()
+        ran = True
+    return ran
 
 def main():
     UN = 'ubuntu'
@@ -26,6 +40,10 @@ def main():
     os.system('echo "export PATH=\$PATH:/home/%s/bin" >> /home/%s/.bashrc' % (UN, UN))
     os.system("cp /host_data/connect /home/%s/bin" % UN)
     os.system("cp /host_data/fetch /home/%s/bin" % UN)
+
+    files = glob.glob("/home/%s/bin/*" % UN)
+    for fn in files:
+        remove_cr(fn)
 
     os.system("chown -R %s:%s /home/%s" % (UN, UN, UN))
 
