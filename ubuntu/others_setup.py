@@ -17,7 +17,7 @@ def main():
     HD = get_homedir()
     UN = get_username()
     print("Username: %s Homedir %s" % (UN, HD))
-    quit();
+
     os.system("git clone https://github.com/cs519-osu/peda.git %s/peda" % HD)
     os.system('echo "source ~/peda/peda.py" >> %s/.gdbinit' % HD)
     print("PEDA install DONE!")
