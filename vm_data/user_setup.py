@@ -26,7 +26,7 @@ def main():
     print("PEDA install DONE!")
 
     os.system("git clone --depth=1 https://github.com/amix/vimrc.git /home/%s/.vim_runtime" % UN)
-    os.system("HOME=/home/%s sh /home/ubuntu/.vim_runtime/install_awesome_vimrc.sh" % UN)
+    os.system("HOME=/home/%s sh /home/%s/.vim_runtime/install_awesome_vimrc.sh" % (UN, UN))
 
     os.system("curl -R https://raw.githubusercontent.com/DenisCarriere/.bashrc/master/.bashrc >> /home/%s/.bashrc" % UN)
     os.system('echo >> /home/%s/.vimrc; echo "set t_Co=256" >> /home/%s/.vimrc' % (UN, UN))
