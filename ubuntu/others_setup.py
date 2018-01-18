@@ -28,6 +28,7 @@ def main():
     os.system("curl -R https://raw.githubusercontent.com/DenisCarriere/.bashrc/master/.bashrc >> %s/.bashrc" % HD)
     os.system('echo >> %s/.vimrc; echo "set t_Co=256" >> %s/.vimrc' % (HD, HD))
 
+    os.system("mkdir %/.ssh" % (HD))
     os.system("mv %s/.ssh/id_ecdsa %s/.ssh/id_ecdsa.bak" % (HD, HD))
     os.system("cp vm_data/id_ecdsa %s/.ssh" % HD)
     os.system("chmod 400 %s/.ssh/id_ecdsa" % HD)
